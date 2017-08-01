@@ -1,0 +1,49 @@
+spring:
+  datasource:
+#  TODO
+    url: jdbc:mysql://XXXX:3306/test?useUnicode=true&characterEncoding=UTF-8
+    username:
+    password:
+    druid:
+      url: jdbc:mysql://XXXX:3306/test?useUnicode=true&characterEncoding=UTF-8
+      username:
+      password:
+      driver-class-name: com.mysql.jdbc.Driver
+      initial-size: 5
+      max-active: 20
+      min-idle: 1
+      max-wait: 60000
+      max-pool-prepared-statement-per-connection-size: 20
+      validation-query: SELECT 1 FROM DUAL
+      test-on-borrow: true
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      filters: stat,wall,log4j,config
+      web-stat-filter:
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      stat-view-servlet:
+        url-pattern: /druid/*
+        allow: 127.0.0.1
+#        deny:
+        login-username: admin
+        login-password: admin
+        reset-enable: false
+#      aop-patterns:
+mybatis:
+# TODO
+  type-aliases-package:
+  mapper-locations: classpath:mapper/*.xml
+mapper:
+# TODO
+  mappers:
+  not-empty: false
+  identity: mysql
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+

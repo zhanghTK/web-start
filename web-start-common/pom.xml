@@ -58,11 +58,18 @@
             <artifactId>pagehelper-spring-boot-starter</artifactId>
             <version>1.1.1</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.cvte.oa</groupId>-->
-            <!--<artifactId>dock-common</artifactId>-->
-            <!--<version>0.0.1-SNAPSHOT</version>-->
-        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.jodd</groupId>
+            <artifactId>jodd-vtor</artifactId>
+            <version>3.6.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.28</version>
+        </dependency>
     </dependencies>
 
     <build>

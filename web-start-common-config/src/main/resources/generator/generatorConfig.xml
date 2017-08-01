@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="generator/mybatis-generator.properties"/>
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.zhangh.web.start.common.CommonMapper.java"/>
+        </plugin>
+
+        <jdbcConnection driverClass="${jdbc.driverClassName}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.username}"
+                        password="${jdbc.password}">
+        </jdbcConnection>
+
+        <!--TODO-->
+        <javaModelGenerator targetPackage="tk.zhangh.web.start.XXX.entity" targetProject="src/main/java">
+            <property name="rootClass" value="tk.zhangh.web.start.common.CommonEntity"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+
+        <!--TODO-->
+        <javaClientGenerator targetPackage="tk.zhangh.web.start.XXX.mapper" targetProject="src/main/java" type="XMLMAPPER"/>
+
+        <!--TODO-->
+        <table tableName="lookup_value">
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        </table>
+    </context>
+</generatorConfiguration>
